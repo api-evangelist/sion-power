@@ -1,0 +1,33 @@
+generated: '2026-08-27'
+method: probed
+source: live GET probes of https://sionpower.com/.well-known/*
+note: >-
+  Recorded absence. Every /.well-known/ path probed on sionpower.com returned 404.
+  Most 404s are served by the site's WordPress theme 404 template (a 69KB HTML page),
+  so nothing here is a document; /.well-known/security.txt returned the bare nginx
+  404. No WellKnown or SecurityTxt pointer is emitted in apis.yml, because the
+  provider serves none of these surfaces.
+hosts:
+- host: sionpower.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

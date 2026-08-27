@@ -1,7 +1,16 @@
 aid: sion-power
 name: Sion Power
-description: 'Sion Power is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Sion Power Corporation is a Tucson, Arizona lithium-metal battery developer
+  and manufacturer, spun out of Brookhaven National Laboratory in 1989. Its Licerion
+  platform pairs a protected lithium-metal anode with proprietary electrolyte and cell
+  engineering to deliver rechargeable cells with roughly double the gravimetric energy
+  density of conventional lithium-ion, targeting defense and aerospace systems, uncrewed
+  aircraft, and electrified mobility. The company operates a 115,000-square-foot R&D
+  and pilot manufacturing facility, holds more than 430 international patents and
+  applications, and has raised over $230 million from investors including LG Energy
+  Solution. Sion Power sells physical battery cells under development agreements with
+  OEMs; it publishes no developer program, public API, SDK, or machine-readable API
+  contract of any kind.'
 url: https://raw.githubusercontent.com/api-evangelist/sion-power/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +21,15 @@ created: '2026-08-27'
 modified: '2026-08-27'
 tags:
 - Company
+- Batteries
+- Energy Storage
+- Lithium Metal
+- Manufacturing
+- Advanced Materials
+- Defense
+- Aerospace
+- Electric Vehicles
+- Hardware
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,50 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/sion-power-domain-security.yml
 - type: Website
+  url: https://sionpower.com/
+- type: About
+  url: https://sionpower.com/company/
+- type: Product
+  url: https://sionpower.com/product/
+- type: Technology
+  url: https://sionpower.com/technology/
+- type: Partners
+  url: https://sionpower.com/partners/
+- type: News
+  url: https://sionpower.com/news/
+- type: Careers
+  url: https://sionpower.com/careers/
+- type: Contact
+  url: https://sionpower.com/contact/
+- type: SecondaryMarket
   url: https://forgeglobal.com/sion-power_stock/
+x-enrichment:
+  date: '2026-08-27'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Sion Power manufactures physical lithium-metal battery cells under OEM development
+    agreements; sionpower.com is an eight-page WordPress marketing site with no developer,
+    docs or API section, and every contract-discovery probe (/openapi.json, /swagger.json,
+    /api-docs, /graphql, /.well-known/*) returned the theme's 404 page, leaving the
+    WordPress /wp-json/ CMS endpoint (401 rest_api_authentication_required) as the only
+    API-shaped surface on the domain.
+  evidence:
+  - url: https://sionpower.com/openapi.json
+    status: 404
+  - url: https://sionpower.com/graphql
+    status: 404
+  - url: https://sionpower.com/.well-known/agent-card.json
+    status: 404
+  - url: https://sionpower.com/wp-json/
+    status: 401
+  - url: https://sionpower.com/sitemap.xml
+    status: 200
+  checked: '2026-08-27'
